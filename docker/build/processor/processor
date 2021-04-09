@@ -1,0 +1,34 @@
+set -e
+
+info() {
+    echo -e "\033[0;35m\n[--- $1 ---]\n\033[0m"
+}
+
+info "Building processor deb"
+
+# 1. Set PYTHONPATH required for unit tests
+export PYTHONPATH=$pypath
+
+cd /project/sawtooth-supply-chain/processor
+
+# 2. Cleanup previous builds
+if [ -d "debian" ]
+then
+    rm -rf debian
+fi
+python3 setup.py clean --all
+
+
+# 2. Build the package
+python3 setup.py --command-packages=stdeb.command debianize
+
+if [ -d "packaging/ubuntu" ]
+then
+    cp -R packaging/ubuntu/* debian/
+fi
+
+dpkg-buildpackage -b -rfakeroot -us -uc
+
+# 3. Install the package
+dpkg -i ../*.deb
+mv ../*.deb /project/sawtooth-supply-chain/build/debs

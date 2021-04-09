@@ -1,0 +1,39 @@
+
+syntax = "proto3";
+
+
+message Proposal {
+  enum Role {
+    OWNER = 0;
+    CUSTODIAN = 1;
+    REPORTER = 2;
+  }
+
+  enum Status {
+    OPEN = 0;
+    ACCEPTED = 1;
+    REJECTED = 2;
+    CANCELED = 3;
+  }
+
+  string record_id = 1;
+
+  uint64 timestamp = 2;
+
+  string issuing_agent = 3;
+
+  string receiving_agent = 4;
+
+  Role role = 5;
+
+  repeated string properties = 6;
+
+  Status status = 7;
+
+  string terms = 8;
+}
+
+
+message ProposalContainer {
+  repeated Proposal entries = 1;
+}

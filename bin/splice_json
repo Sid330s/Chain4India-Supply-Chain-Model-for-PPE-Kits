@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+
+
+const { resolve } = require('path')
+
+const baseDir = process.cwd()
+const jsonPaths = process.argv.slice(2)
+
+const spliceObjects = (a, b) => {
+  return Object.keys(b).reduce((spliced, key) => {
+    if (typeof a[key] === 'object' && typeof b[key] === 'object') {
+      spliced[key] = spliceObjects(a[key], b[key])
+    } else {
+      spliced[key] = b[key]
+    }
+    return spliced
+  }, Object.assign({}, a))
+}
+
+process.stdout.write(JSON.stringify(jsonPaths
+  .map(relPath => resolve(baseDir, relPath))
+  .map(absPath => require(absPath))
+  .reduce((spliced, jsonObj) => spliceObjects(spliced, jsonObj), {})))

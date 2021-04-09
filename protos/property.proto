@@ -1,0 +1,88 @@
+
+syntax = "proto3";
+
+
+message Property {
+  message Reporter {
+    string public_key = 1;
+    bool authorized = 2;
+    uint32 index = 3;
+  }
+
+  string name = 1;
+
+  string record_id = 2;
+
+  PropertySchema.DataType data_type = 3;
+
+  repeated Reporter reporters = 4;
+
+  uint32 current_page = 5;
+
+  bool wrapped = 6;
+}
+
+
+message PropertyContainer {
+  repeated Property entries = 1;
+}
+
+
+message PropertySchema {
+  enum DataType {
+    BYTES = 0;
+    STRING = 1;
+    INT = 2;
+    FLOAT = 3;
+    LOCATION = 4;
+  }
+
+  string name = 1;
+
+  DataType data_type = 2;
+
+  bool required = 3;
+}
+
+
+message PropertyValue {
+  string name = 1;
+
+  PropertySchema.DataType data_type = 2;
+
+  bytes bytes_value = 11;
+  string string_value = 12;
+  sint64 int_value = 13;
+  float float_value = 14;
+  Location location_value = 15;
+}
+
+
+message PropertyPage {
+  message ReportedValue {
+    uint32 reporter_index = 1;
+    uint64 timestamp = 2;
+
+    bytes bytes_value = 11;
+    string string_value = 12;
+    sint64 int_value = 13;
+    float float_value = 14;
+    Location location_value = 15;
+  }
+
+  string name = 1;
+  string record_id = 2;
+
+  repeated ReportedValue reported_values = 3;
+}
+
+
+message PropertyPageContainer {
+  repeated PropertyPage entries = 1;
+}
+
+
+message Location {
+  sint64 latitude = 1;
+  sint64 longitude = 2;
+}

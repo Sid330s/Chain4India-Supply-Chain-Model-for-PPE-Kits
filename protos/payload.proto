@@ -1,0 +1,104 @@
+
+syntax = "proto3";
+
+import "property.proto";
+import "proposal.proto";
+
+
+message SCPayload {
+  enum Action {
+    CREATE_AGENT = 0;
+    CREATE_RECORD = 1;
+    FINALIZE_RECORD = 2;
+    CREATE_RECORD_TYPE = 3;
+    UPDATE_PROPERTIES = 4;
+    CREATE_PROPOSAL = 5;
+    ANSWER_PROPOSAL = 6;
+    REVOKE_REPORTER = 7;
+  }
+
+  Action action = 1;
+
+  uint64 timestamp = 2;
+
+  CreateAgentAction create_agent = 3;
+  CreateRecordAction create_record = 4;
+  FinalizeRecordAction finalize_record = 5;
+  CreateRecordTypeAction create_record_type = 6;
+  UpdatePropertiesAction update_properties = 7;
+  CreateProposalAction create_proposal = 8;
+  AnswerProposalAction answer_proposal = 9;
+  RevokeReporterAction revoke_reporter = 10;
+}
+
+
+message CreateAgentAction {
+  string name = 1;
+
+  string type = 2;
+}
+
+
+message CreateRecordAction {
+  string record_id = 1;
+
+  string record_type = 2;
+
+  repeated PropertyValue properties = 3;
+}
+
+
+message FinalizeRecordAction {
+  string record_id = 1;
+}
+
+
+message CreateRecordTypeAction {
+  string name = 1;
+
+  repeated PropertySchema properties = 2;
+}
+
+
+message UpdatePropertiesAction {
+  string record_id = 1;
+
+  repeated PropertyValue properties = 2;
+}
+
+
+message CreateProposalAction {
+  string record_id = 1;
+
+  string receiving_agent = 2;
+
+  Proposal.Role role = 3;
+
+  repeated string properties = 4;
+}
+
+
+message AnswerProposalAction {
+  enum Response {
+    ACCEPT = 0;
+    REJECT = 1;
+    CANCEL = 2;
+  }
+
+  string record_id = 1;
+
+  string receiving_agent = 2;
+
+  Proposal.Role role = 3;
+
+  Response response = 4;
+}
+
+
+message RevokeReporterAction {
+  string record_id = 1;
+
+  string reporter_id = 2;
+
+  repeated string properties = 3;
+}

@@ -1,0 +1,38 @@
+
+syntax = "proto3";
+
+import "property.proto";
+
+
+message Record {
+  message AssociatedAgent {
+    string agent_id = 1;
+    uint64 timestamp = 2;
+  }
+
+  string record_id = 1;
+
+  string record_type = 2;
+
+  repeated AssociatedAgent owners = 3;
+  repeated AssociatedAgent custodians = 4;
+
+  bool final = 5;
+}
+
+
+message RecordContainer {
+  repeated Record entries = 1;
+}
+
+
+message RecordType {
+  string name = 1;
+
+  repeated PropertySchema properties = 2;
+}
+
+
+message RecordTypeContainer {
+  repeated RecordType entries = 1;
+}
