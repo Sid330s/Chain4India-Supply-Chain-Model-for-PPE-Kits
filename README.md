@@ -1,12 +1,21 @@
 # Chain4India: Supply Chain Management for Medical Equipments
 
-- **Project Name**: Blockchain Using Hyperledger Sawtooth to Combat COVID-19
-- **Project Number**: 20-COV-047
-- **Funding Organization**: IEEE Humanitarian Activities Committee (HAC) & IEEE Special Interest Group on Humanitarian Technology (SIGHT)
+## Project Details
 
-- **List of HAC funded projects**: ![view](https://docs.google.com/spreadsheets/d/1YBQcN7ZCypsIUidmuJL4AFoDUtB452REDeQp7AxcPXc/edit?usp=share_link)
+- **List of HAC funded projects**: ![view](https://docs.google.com/spreadsheets/d/e/2PACX-1vTey3YTuoUi49Eijyf3Yl-FoyhCkaVwslK9zQRcgCQqOZu1XrjLiqEy-5qUQ17vNOTzuWzM7K0Qsd9v/pubhtml)
 
-![Hyperledger Sawtooth](images/sawtooth_logo_light_blue-small.png)
+| **Attribute**            | **Description**                                                                 |
+|---------------------------|---------------------------------------------------------------------------------|
+| **Project Name**          | Blockchain Using Hyperledger Sawtooth to Combat COVID-19                        |
+| **Project Number**        | 20-COV-047                                                                      |
+| **Funding Organization**  | IEEE Humanitarian Activities Committee (HAC) & IEEE Special Interest Group on Humanitarian Technology (SIGHT) |
+
+
+| Image 1              | Image 2              | Image 3              |
+|-----------------------|----------------------|----------------------|
+| ![IEEE HAC](images/badge.png)  | ![Hyperledger Sawtooth](images/sawtooth_logo_light_blue-small.png)  | ![IEEE HAC](images/mlsc.png)   |
+
+
 
 ## Problem Statement
 
