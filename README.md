@@ -2,7 +2,7 @@
 
 ## Project Details
 
-- **List of HAC funded projects**: ![view](https://docs.google.com/spreadsheets/d/e/2PACX-1vTey3YTuoUi49Eijyf3Yl-FoyhCkaVwslK9zQRcgCQqOZu1XrjLiqEy-5qUQ17vNOTzuWzM7K0Qsd9v/pubhtml)
+- **List of HAC funded projects**: [view](https://docs.google.com/spreadsheets/d/e/2PACX-1vTey3YTuoUi49Eijyf3Yl-FoyhCkaVwslK9zQRcgCQqOZu1XrjLiqEy-5qUQ17vNOTzuWzM7K0Qsd9v/pubhtml)
 
 | **Attribute**            | **Description**                                                                 |
 |---------------------------|---------------------------------------------------------------------------------|
