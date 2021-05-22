@@ -35,6 +35,11 @@ We will be able to establish a network between multiple nodes i.e. distributed l
 
 ![img5](images/img5.gif)
 
+## How To setup on AWS 
+
+https://github.com/soumilshah1995/Deploy-Docker-Container-on-AWS
+
+https://www.youtube.com/watch?v=awFLzy0XwXo
 
 ## Video
 https://drive.google.com/file/d/10i2ANKeOK4_X1tXVJqlB94gqu4KZKW6C/view?usp=sharing
